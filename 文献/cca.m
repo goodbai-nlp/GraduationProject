@@ -12,7 +12,7 @@ function [Wx, Wy, r] = cca(X,Y)
 % then M*L, Wy is N*L and r is L*1.
 %
 %
-% � 2000 Magnus Borga, Link�pings universitet
+% © 2000 Magnus Borga, Linköpings universitet
 
 % --- Calculate covariance matrices ---
 
@@ -20,21 +20,21 @@ z = [X;Y];
 C = cov(z.');
 sx = size(X,1);
 sy = size(Y,1);
-Cxx = C(1:sx, 1:sx) + 10^(-8)*eye(sx);
+Cxx = C(1:sx, 1:sx) + 10^(-8)*eye(sx); 			% eye(n) 表示n阶单位阵
 Cxy = C(1:sx, sx+1:sx+sy);
 Cyx = Cxy';
-Cyy = C(sx+1:sx+sy, sx+1:sx+sy) + 10^(-8)*eye(sy);
-invCyy = inv(Cyy);
+Cyy = C(sx+1:sx+sy, sx+1:sx+sy) + 10^(-8)*eye(sy);	
+invCyy = inv(Cyy);								% inv 表示求逆
 
 % --- Calcualte Wx and r ---
 
-[Wx,r] = eig(inv(Cxx)*Cxy*invCyy*Cyx); % Basis in X
+[Wx,r] = eig(inv(Cxx)*Cxy*invCyy*Cyx); % Basis in X		%求特征值，特征向量
 r = sqrt(real(r));      % Canonical correlations
 
 % --- Sort correlations ---
 
-V = fliplr(Wx);		% reverse order of eigenvectors
-r = flipud(diag(r));	% extract eigenvalues anr reverse their orrer
+V = fliplr(Wx);		% reverse order of eigenvectors		%特征向量顺序反转
+r = flipud(diag(r));	% extract eigenvalues anr reverse their order
 [r,I]= sort((real(r)));	% sort reversed eigenvalues in ascending order
 r = flipud(r);		% restore sorted eigenvalues into descending order
 for j = 1:length(I)
