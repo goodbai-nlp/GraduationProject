@@ -1,2 +1,2 @@
 # GraduationProject
-基于深度学习的跨语言语义表示
+基于CCA的跨语言模型的研究与改进
