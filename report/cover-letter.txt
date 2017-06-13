@@ -1,0 +1,17 @@
+Dear Editor,
+
+We would like to submit the enclosed manuscript entitled "Improving Vector Space Word Representations Via Kernel
+Canonical Correlation Analysis", which we wish to be considered for publication in ACM-TALLIP.
+
+The work described has not been submitted elsewhere for publication, in whole or in part, and all the authors listed have approved the manuscript that is enclosed.We believe that three aspects of this manuscript will make it interesting to general readers of your journal. 
+
+First, we proposed a KCCA-based method to generate cross-lingual wordembeddings, which is simple yet sufficient, and achieve great improvements(about 10 percent increasement of accuracy on some tasks than our base-line model) accross many languages(of course low-resource languages included). 
+
+Second, we show that there are lot of non-linear relationships across languages, rather than .
+
+Thank you very much for your time and consideration.
+
+Sincerely yours,
+
+作者名
+
